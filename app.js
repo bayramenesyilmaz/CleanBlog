@@ -16,7 +16,7 @@ console.log(process.env.MONGODB_KEY);
 // connect DB
 mongoose
   .connect(
-    `mongodb+srv://bayenes:${process.env.MONGODB_KEY}@cluster0.0ko7v2s.mongodb.net/?retryWrites=true&w=majority`
+    `mongodb+srv://bayenes:jbe18Wa4TFVLU7jm@cluster0.0ko7v2s.mongodb.net/?retryWrites=true&w=majority`
   )
   .then((res) => console.log('Connected mongo atlas'))
   .catch((err) => console.log(err));
