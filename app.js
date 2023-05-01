@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // connect DB
-mongoose.connect('mongodb://localhost/clean-blog');
+mongoose.connect('mongodb+srv://bayenes:3LNmVUprnhPopklm@cluster0.0ko7v2s.mongodb.net/?retryWrites=true&w=majority');
 
 /* MIDDLEWARE */
 app.use(express.static('public'));
