@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+require('dotenv').config();
 
 const ejs = require('ejs');
 
@@ -11,8 +12,14 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+console.log(process.env.MONGODB_KEY);
 // connect DB
-mongoose.connect('mongodb+srv://bayenes:3LNmVUprnhPopklm@cluster0.0ko7v2s.mongodb.net/?retryWrites=true&w=majority');
+mongoose
+  .connect(
+    `mongodb+srv://bayenes:${process.env.MONGODB_KEY}@cluster0.0ko7v2s.mongodb.net/?retryWrites=true&w=majority`
+  )
+  .then((res) => console.log('Connected mongo atlas'))
+  .catch((err) => console.log(err));
 
 /* MIDDLEWARE */
 app.use(express.static('public'));
